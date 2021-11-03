@@ -36,15 +36,16 @@ if(isset($_POST['update']))
 ?>
 <?php
 //getting id from url
+include_once("config.php");
 $id = $_GET['id'];
-
+echo $id;
 //selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM users WHERE id=$id");
+$result = mysqli_query($mysqli, "SELECT * FROM siswa WHERE id=$id");
 
-while($res = mysqli_fetch_array($result))
+while($res = mysqli_fetch_assoc($result))
 {
-	$name = $res['name'];
-	$age = $res['age'];
+	$name = $res['nama'];
+	$kelas = $res['kelas'];
 	$email = $res['email'];
 }
 ?>
@@ -64,8 +65,8 @@ while($res = mysqli_fetch_array($result))
 				<td><input type="text" name="name" value="<?php echo $name;?>"></td>
 			</tr>
 			<tr> 
-				<td>Age</td>
-				<td><input type="text" name="age" value="<?php echo $age;?>"></td>
+				<td>Kelas</td>
+				<td><input type="text" name="age" value="<?php echo $kelas;?>"></td>
 			</tr>
 			<tr> 
 				<td>Email</td>
