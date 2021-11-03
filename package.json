@@ -1,0 +1,14 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "DarDevilX <SamLirsuy5542>",
+  "license": "MIT",
+  "scripts":{
+    "start": "nodemon index.js"
+  },   
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.14"
+  }
+}
